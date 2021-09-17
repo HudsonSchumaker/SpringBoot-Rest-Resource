@@ -19,7 +19,16 @@ class ConsoleRepository(var consoles: HashMap<String, Console>): CommonRepositor
     }
 
     override fun findById(id: String): Console {
-        TODO("Not yet implemented")
+        return consoles.getOrDefault(id, Console(
+            id = "",
+            name = "",
+            brand = "",
+            year = 0,
+            cpu = "",
+            gpu = "",
+            ram = "",
+            vram = "")
+        )
     }
 
     override fun findAll(): Iterable<Console> {
