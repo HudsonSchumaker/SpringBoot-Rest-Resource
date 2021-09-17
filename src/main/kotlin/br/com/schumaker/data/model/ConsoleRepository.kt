@@ -5,13 +5,19 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource
 @RepositoryRestResource
 class ConsoleRepository(var consoles: HashMap<String, Console>): CommonRepository<Console> {
 
+    override fun save(domain: Console): Console? {
+        val console = consoles.get(domain.id)
+        if (null != console) {
+            return console
+        }
 
-    override fun save(domain: Console): Console {
-        TODO("Not yet implemented")
+        consoles.put(domain.id, domain)
+        return consoles.get(domain.id)
     }
 
     override fun save(domains: Collection<Console>): Iterable<Console> {
-        TODO("Not yet implemented")
+        domains.forEach(this::save)
+        return findAll()
     }
 
     override fun delete(domain: Console) {
@@ -32,6 +38,6 @@ class ConsoleRepository(var consoles: HashMap<String, Console>): CommonRepositor
     }
 
     override fun findAll(): Iterable<Console> {
-        TODO("Not yet implemented")
+        return consoles.values
     }
 }
