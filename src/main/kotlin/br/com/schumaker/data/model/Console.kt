@@ -1,7 +1,9 @@
 package br.com.schumaker.data.model
 
 import java.util.*
+import javax.persistence.Entity
 
+@Entity
 data class Console(
     val id: String = UUID.randomUUID().toString(),
     val name: String,
