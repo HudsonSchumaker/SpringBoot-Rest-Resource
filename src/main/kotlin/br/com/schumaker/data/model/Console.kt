@@ -2,7 +2,7 @@ package br.com.schumaker.data.model
 
 import java.util.*
 
-data class Consoles(
+data class Console(
     val id: String = UUID.randomUUID().toString(),
     val name: String,
     val brand: String,

@@ -1,4 +1,4 @@
-package br.com.schumaker.data
+ package br.com.schumaker.data
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
