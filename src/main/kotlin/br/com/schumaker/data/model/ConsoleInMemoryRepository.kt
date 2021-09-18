@@ -3,7 +3,7 @@ package br.com.schumaker.data.model
 import org.springframework.stereotype.Repository
 
 @Repository
-class ConsoleInMemoryRepository(var consoles: HashMap<String, Console>): CommonRepository<Console, String> {
+class ConsoleInMemoryRepository(private var consoles: HashMap<String, Console>): CommonRepository<Console, String> {
 
     override fun save(domain: Console): Console? {
         val result = consoles.get(domain.id)
