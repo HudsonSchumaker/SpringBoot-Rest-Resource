@@ -31,6 +31,6 @@ class ConsoleInMemoryRepository(var consoles: HashMap<String, Console>): CommonR
     }
 
     override fun findAll(): Iterable<Console> {
-        TODO("Not yet implemented")
+       return consoles.values
     }
 }
