@@ -23,11 +23,11 @@ class ConsoleInMemoryRepository(var consoles: HashMap<String, Console>): CommonR
     }
 
     override fun delete(domain: Console) {
-        TODO("Not yet implemented")
+        consoles.remove(domain.id)
     }
 
-    override fun findById(id: String): Console {
-        TODO("Not yet implemented")
+    override fun findById(id: String): Console? {
+        return consoles.get(id)
     }
 
     override fun findAll(): Iterable<Console> {
