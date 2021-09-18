@@ -9,8 +9,8 @@ class ConsoleInMemoryRepository(var consoles: HashMap<String, Console>): CommonR
     override fun save(domain: Console): Console? {
         val result = consoles.get(domain.id)
         if (null != result) {
-
-
+            consoles.remove(domain.id)
+            consoles.put(domain.id, domain)
             return result;
         }
 
