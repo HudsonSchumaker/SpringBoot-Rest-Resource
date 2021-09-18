@@ -10,8 +10,12 @@ class ConsoleInMemoryRepository(var consoles: HashMap<String, Console>): CommonR
         val result = consoles.get(domain.id)
         if (null != result) {
 
+
+            return result;
         }
 
+        consoles.put(domain.id, domain)
+        return consoles.get(domain.id)
     }
 
     override fun save(domains: Collection<Console>): Iterable<Console> {
