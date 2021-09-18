@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository
 @Repository
 class ConsoleInMemoryRepository(var consoles: HashMap<String, Console>): CommonRepository<Console, String> {
 
-
     override fun save(domain: Console): Console? {
         val result = consoles.get(domain.id)
         if (null != result) {
@@ -19,7 +18,8 @@ class ConsoleInMemoryRepository(var consoles: HashMap<String, Console>): CommonR
     }
 
     override fun save(domains: Collection<Console>): Iterable<Console> {
-        TODO("Not yet implemented")
+        domains.forEach(this::save)
+        return findAll()
     }
 
     override fun delete(domain: Console) {
