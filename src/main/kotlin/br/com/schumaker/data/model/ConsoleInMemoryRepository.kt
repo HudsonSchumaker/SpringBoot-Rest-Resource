@@ -19,7 +19,7 @@ class ConsoleInMemoryRepository(private var consoles: HashMap<String, Console>):
 
     override fun save(domains: Collection<Console>): Iterable<Console> {
         domains.forEach(this::save)
-        return findAll()
+        return findAll() // have to improve
     }
 
     override fun delete(domain: Console) {
