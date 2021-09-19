@@ -1,5 +1,6 @@
 package br.com.schumaker.data.model
 
+
 interface CommonRepository<T, K> {
     fun save(domain: T): T?
     fun save(domains: Collection<T>): Iterable<T>
