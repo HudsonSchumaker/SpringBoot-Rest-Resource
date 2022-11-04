@@ -1,3 +1,5 @@
+//
+
 package br.com.schumaker.data.model
 
 interface CommonRepository<T, K> {
